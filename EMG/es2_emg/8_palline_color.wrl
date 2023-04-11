@@ -1,0 +1,196 @@
+#VRML V2.0 utf8
+# Created with V-Realm Builder v2.0
+# Integrated Data Systems Inc.
+# www.ids-net.com
+
+DEF trgfrc Transform {
+  children DEF TargetForce Shape {
+    appearance DEF colortrg Appearance {
+      material DEF trgcolor Material {
+        diffuseColor 1 0 0
+      }
+    }
+    geometry DEF balltrgf Sphere {
+      radius 0.004
+    }
+  }
+}
+DEF MySound_slow Sound {
+  source DEF MyAudio_slow AudioClip {
+    url "audio/tone.wav" 
+    loop TRUE
+  }
+  minFront 10
+  minBack 10
+  maxFront 50
+  maxBack 50
+  intensity 0
+}
+DEF MySound! Sound {
+  source DEF MyAudio! AudioClip {
+    url "audio/tone.wav" 
+    loop TRUE
+  }
+  minFront 10
+  minBack 10
+  maxFront 50
+  maxBack 50
+  intensity 0
+}
+DEF Viewpoint1 Viewpoint {
+  position 0 0 5
+  fieldOfView 0.06
+}
+DEF target_up Transform {
+  translation 0 0.1 0
+  children DEF colore_bersaglio Shape {
+    appearance DEF cambiacolore Appearance {
+      material DEF ber Material {
+        shininess 0
+        diffuseColor 1 0.2 0.2
+        ambientIntensity 0.1
+      }
+    }
+    geometry DEF ber_ Sphere {
+      radius 0.01
+    }
+  }
+}
+DEF target_down Transform {
+  translation 0 -0.1 0
+  children DEF colore_bersaglio_0001 Shape {
+    appearance DEF cambiacolore_0001 Appearance {
+      material DEF ber_0001 Material {
+        shininess 0
+        diffuseColor 0.4 1 0.2
+        ambientIntensity 0.1
+      }
+    }
+    geometry DEF ber__0001 Sphere {
+      radius 0.01
+    }
+  }
+}
+DEF target_right Transform {
+  translation 0.1 0 0
+  children DEF colore_bersaglio_0002 Shape {
+    appearance DEF cambiacolore_0002 Appearance {
+      material DEF ber_0002 Material {
+        shininess 0
+        diffuseColor 1 1 0.4
+        ambientIntensity 0.1
+      }
+    }
+    geometry DEF ber__0002 Sphere {
+      radius 0.01
+    }
+  }
+}
+DEF target_left Transform {
+  translation -0.1 0 0
+  children DEF colore_bersaglio_0003 Shape {
+    appearance DEF cambiacolore_0003 Appearance {
+      material DEF ber_0003 Material {
+        shininess 0
+        diffuseColor 0 0.8 1
+        ambientIntensity 0.1
+      }
+    }
+    geometry DEF ber__0003 Sphere {
+      radius 0.01
+    }
+  }
+}
+DEF target_ne Transform {
+  translation 0.0707107 0.0707107 0
+  children DEF colore_bersaglio_0004 Shape {
+    appearance DEF cambiacolore_0004 Appearance {
+      material DEF ber_0004 Material {
+        shininess 0
+        diffuseColor 1 0.6 0.2
+        ambientIntensity 0.1
+      }
+    }
+    geometry DEF ber__0004 Sphere {
+      radius 0.01
+    }
+  }
+}
+DEF target_se Transform {
+  translation 0.0707107 -0.0707107 0
+  children DEF colore_bersaglio_0005 Shape {
+    appearance DEF cambiacolore_0005 Appearance {
+      material DEF ber_0005 Material {
+        shininess 0
+        diffuseColor 0.6 0.6 0
+        ambientIntensity 0.1
+      }
+    }
+    geometry DEF ber__0005 Sphere {
+      radius 0.01
+    }
+  }
+}
+DEF target_nw Transform {
+  translation -0.0707107 0.0707107 0
+  children DEF colore_bersaglio_0006 Shape {
+    appearance DEF cambiacolore_0006 Appearance {
+      material DEF ber_0006 Material {
+        shininess 0
+        diffuseColor 0.6 0.2 1
+        ambientIntensity 0.1
+      }
+    }
+    geometry DEF ber__0006 Sphere {
+      radius 0.01
+    }
+  }
+}
+DEF target_sw Transform {
+  translation -0.0707107 -0.0707107 0
+  children DEF colore_bersaglio_0007 Shape {
+    appearance DEF cambiacolore_0007 Appearance {
+      material DEF ber_0007 Material {
+        shininess 0
+        diffuseColor 0.2 1 0.8
+        ambientIntensity 0.1
+      }
+    }
+    geometry DEF ber__0007 Sphere {
+      radius 0.01
+    }
+  }
+}
+DEF cursor Transform {
+  translation 0 0 0.02
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 1
+        }
+      }
+      geometry Sphere {
+        radius 0.005
+      }
+    }
+    DEF Force Transform {
+      translation 0 0.0125 0
+      scale 0 0 0
+      center 0 -0.0125 0
+      children [
+        Cylinder {
+          radius 0.001
+          height 0.025
+        }
+        DEF freccia Transform {
+          translation 0 0.0125 0
+          children Cone {
+            height 0.005
+            bottomRadius 0.003
+          }
+        }
+      ]
+    }
+  ]
+}
